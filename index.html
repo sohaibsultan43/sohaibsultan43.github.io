@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sohaib Sultan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9fad070d5a.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>                    
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Data Scientist</p>
+                <h1>Hi! I'm <span> Sohaib</span><br>Sultan from Pakistan </h1>           
+            </div>
+        </div>
+    </div>
+   
+    
+
+<!-- About Section -->
+
+
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/user.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>Hi, I’m Sohaib Sultan – a Data Scientist passionate about transforming
+                        raw data into actionable insights, building intelligent systems, 
+                        and solving complex problems with the power of analytics and machine 
+                        learning. Let’s turn data into decisions</p>
+                        
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <br>
+                        <div class="tab-contents active-tab" id="skills">
+                            <ul>
+                                <li><span>Deep learning</span><br>Training Neural Networks</li>
+                                <li><span>Natural Language Processing</span><br>Analyzing Text Data</li>
+                                <li><span>Feature Engineering</span><br>Enhancing Model Performance</li>
+                                <li><span>Cloud Computing</span><br>Deploying Data Solutions</li>
+                            </ul>
+                        </div> 
+                        <div class="tab-contents" id="experience">
+                            <ul>
+                                <li><span>Fresh</span><br>Looking for an opportunity</li>
+                            </ul>
+                        </div> 
+                        <div class="tab-contents" id="education">
+                            <ul>
+                                <li><span>2024-2026</span><br>Master in Data Science</li>
+                                <li><span>2018-2022</span><br>Bachelor in Mechatronics and Control Engineering</li>
+                            </ul>
+                        </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- Services Section -->
+
+
+
+ <div class="services" id="services">
+    <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+            <div>
+                <i class="fa-solid fa-chart-simple"></i>
+                <h2>Predictive Analytics</h2>
+                <p>Leverage advanced machine learning algorithms to forecast trends,
+                    identify patterns, and make data-driven predictions that empower 
+                    businesses to anticipate future outcomes and optimize decision-making 
+                    processes.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-microchip"></i>
+                <h2>Natural Language Processing (NLP)</h2>
+                <p>Build intelligent systems capable of understanding, analyzing, 
+                    and generating human language for applications like sentiment 
+                    analysis, chatbots, and document summarization.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div>
+                <i class="fa-solid fa-laptop"></i>
+                <h2>Machine Learning Solutions</h2>
+                <p>Design, develop, and deploy custom machine learning models
+                    tailored to your business needs, from recommendation systems to 
+                    fraud detection, ensuring smarter automation and enhanced 
+                    operational efficiency.</p>
+                <a href="#">Read More</a>
+            </div>
+
+        </div>
+    </div>
+ </div>
+<br>
+<br>
+<br>
+
+
+<!-- Portfolio Section -->
+ <div class="portfolio" id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="images/portfolio-1.png">
+                <div class="layer">
+                    <h3>Customer Churn Prediction</h3>
+                    <p>Developed a machine learning model to predict customer churn
+                    for a telecom company using Python and Scikit-learn. Analyzed 
+                    historical data, engineered features, and built a Random Forest 
+                    classifier with 85% accuracy. The solution helped the business 
+                    reduce churn by 20% through targeted retention strategies, 
+                    improving customer satisfaction and revenue.</p>
+                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/portfolio-2.png">
+                <div class="layer">
+                    <h3>Sentiment Analysis on Social Media</h3>
+                    <p>Built a Natural Language Processing (NLP) pipeline to analyze 
+                        sentiment from Twitter data. Utilized TensorFlow and NLTK to 
+                        preprocess text, train a deep learning model, and classify 
+                        tweets as positive, negative, or neutral. Achieved 90% 
+                        accuracy, enabling brands to monitor public sentiment and 
+                        refine marketing campaigns in real-time.</p>
+                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="images/portfolio-3.png">
+                <div class="layer">
+                    <h3>Sales Forecasting for Retail</h3>
+                    <p>Created a time series forecasting model using ARIMA and LSTM 
+                        to predict monthly sales for a retail chain. Processed 
+                        historical sales data, identified trends, and achieved 
+                        92% forecast accuracy. The solution optimized inventory 
+                        management, reduced stockouts, and increased profitability 
+                        by 15%.</p>
+                <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn">View More</a>
+    </div>
+ </div>
+
+
+<!-- Contact Section -->
+    <div class="contact" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>sohaibsultan710@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>+92 315 7642421</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+
+                    </div>
+                    <a href="resume.pdf" download class="btn btn2">Download CV</a>
+                </div>
+                <div class="contact-left">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Name" required>
+                        <input type="email" name="Email" placeholder="Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Send Message</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+                
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2025 Sohaib Sultan. All rights reserved.</p>
+        </div>
+    </div>
+
+
+<script>
+    var tablinks = document.getElementsByClassName('tab-links');
+    var tabcontents = document.getElementsByClassName('tab-contents');
+
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove('active-link');
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove('active-tab');
+        }
+        event.currentTarget.classList.add('active-link');
+        document.getElementById(tabname).classList.add('active-tab');
+    }
+</script>
+<script>
+    var sidemenu = document.getElementById('sidemenu');
+    function openmenu(){
+        sidemenu.style.right = '0px';
+    }
+    function closemenu(){
+        sidemenu.style.right = '-200px';
+    }
+    </script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZpFw2fWF5D5QskP48r-OE37JVzbpIyEDjr9XfqSxdCreYCekJWVlRhyJ7CImbDcBr/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById('msg')
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message Sent Successfully!";
+            setTimeout(() => {
+                msg.innerHTML = "";
+            }, 5000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
