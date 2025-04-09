@@ -4,7 +4,7 @@
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-html{
+html {
     scroll-behavior: smooth;
 }
 body {
@@ -109,7 +109,7 @@ nav ul li a:hover::after {
 }
 
 .tab-titles {
-    margin-top: 20px 0 40px;
+    margin-top: 20px;
     display: flex;
 }
 
@@ -220,9 +220,10 @@ nav ul li a:hover::after {
 
 .work-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns on desktop */
     grid-gap: 40px;
     margin-top: 50px;
+    max-width: 100%;
 }
 
 .work {
@@ -240,7 +241,7 @@ nav ul li a:hover::after {
 
 .layer {
     width: 100%;
-    height: 0%;
+    height: 0;
     background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
     border-radius: 10px;
     position: absolute;
@@ -283,6 +284,34 @@ nav ul li a:hover::after {
     height: 100%;
 }
 
+/* Add this to your existing CSS file */
+.hidden-work {
+    display: block; /* Always keep it block, we'll control visibility with opacity */
+    opacity: 0; /* Initially hidden */
+    height: 0; /* Collapse height initially */
+    overflow: hidden; /* Prevent content from showing during collapse */
+    transition: opacity 0.5s ease, height 0.5s ease; /* Smooth transition for opacity and height */
+    pointer-events: none; /* Disable interaction when hidden */
+}
+
+.hidden-work.visible {
+    opacity: 1; /* Fully visible */
+    height: auto; /* Expand to natural height */
+    pointer-events: auto; /* Enable interaction when visible */
+}
+
+/* Ensure the work-list grid behaves correctly */
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns on desktop */
+    grid-gap: 40px;
+    margin-top: 50px;
+    max-width: 100%;
+}
+
+
+
+/* Button styling */
 .btn {
     display: block;
     margin: 50px auto;
@@ -296,6 +325,10 @@ nav ul li a:hover::after {
 }
 
 .btn:hover {
+    background: #ff004f;
+}
+
+.btn.active {
     background: #ff004f;
 }
 
@@ -374,8 +407,13 @@ form .btn2 {
     margin-top: 10px;
 }
 
+#msg {
+    color: #61b752;
+    margin-top: -40px;
+    display: border-box;
+}
 
-/* ---------------- css for small screen----------------  */
+/* ---------------- css for small screen ---------------- */
 nav .fa-solid {
     display: none;
 }
@@ -397,6 +435,9 @@ nav .fa-solid {
     nav .fa-solid {
         display: block;
         font-size: 25px;
+    }
+    .work-list {
+        grid-template-columns: 1fr; /* 1 column on mobile */
     }
 
     nav ul {
@@ -454,58 +495,7 @@ nav .fa-solid {
         font-size: 12px;
     }
 
-    /* Fix for the hover effect in the "My Work" section */
-    .work {
-        position: relative;
-        overflow: hidden;
+    .work-list {
+        grid-template-columns: 1fr; /* 1 column on mobile */
     }
-
-    .layer {
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
-        border-radius: 10px;
-        position: absolute;
-        left: 0;
-        bottom: -100%;
-        transition: bottom 0.5s;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        padding: 0 20px;
-        text-align: center;
-        font-size: 14px;
-    }
-
-    .work:hover .layer {
-        bottom: 0;
-    }
-
-    .layer h3 {
-        font-weight: 500;
-        margin-bottom: 10px;
-    }
-
-    .layer p {
-        font-size: 12px;
-    }
-
-    .layer a {
-        margin-top: 10px;
-        color: #ff004f;
-        text-decoration: none;
-        font-size: 16px;
-        line-height: 40px;
-        background: #ffffff;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        text-align: center;
-    }
-}
-#msg{
-    color: #61b752;
-    margin-top: -40px;
-    display: block;
 }

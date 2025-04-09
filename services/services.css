@@ -1,0 +1,314 @@
+/* services.css */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #080808;
+    color: aliceblue;
+}
+
+/* Header Section */
+#header {
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #080808;
+}
+
+.container {
+    padding: 10px 5%; /* Reduced padding to give more space */
+    max-width: 1400px; /* Ensure container doesn't get too narrow */
+    margin: 0 auto;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #080808;
+    z-index: 10;
+}
+
+.logo {
+    width: 140px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav .fa-solid {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.header-text {
+    text-align: center;
+    font-size: 20px;
+}
+
+.header-text h1 {
+    font-size: 40px;
+    margin-top: 10px;
+}
+
+.header-text h1 span {
+    color: #ff004f;
+}
+
+/* Services Section */
+.services {
+    padding: 80px 0;
+}
+
+.sub-title {
+    font-size: 40px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.services-list div {
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+}
+
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.services-list div p {
+    color: #ababab;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.services-list div p strong {
+    color: #ff004f;
+    font-weight: 600;
+    background: rgba(255, 0, 79, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+/* Testimonial Section */
+.testimonials {
+    padding: 80px 0 120px;
+    background: #1a1a1a;
+}
+
+.testimonial-wrapper {
+    position: relative;
+    width: 100%; /* Full width of container */
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+.testimonial-slider {
+    display: flex;
+    width: calc(100% * 4); /* 10 testimonials, 3 visible = ~4 slides */
+    transition: transform 0.5s ease;
+}
+
+.testimonial {
+    width: 33.33%; /* Show 3 at a time (100% / 3) */
+    background: #262626;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.testimonial p {
+    font-size: 14px;
+    color: #ababab;
+    margin-bottom: 20px;
+}
+
+.testimonial h3 {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ff004f;
+    border: none;
+    color: #ffffff;
+    font-size: 24px;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 5;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.nav-btn:hover {
+    opacity: 1;
+}
+
+.prev-btn {
+    left: -60px; /* Positioned outside the container */
+}
+
+.next-btn {
+    right: -60px; /* Positioned outside the container */
+}
+
+/* Back Button */
+.back-btn {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.btn {
+    display: inline-block;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #ff004f;
+}
+
+/* Footer */
+.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background: #262626;
+    font-weight: 300;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 600px) {
+    #header {
+        height: 60vh;
+    }
+
+    .header-text {
+        font-size: 16px;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    .sub-title {
+        font-size: 30px;
+    }
+
+    nav .fa-solid {
+        display: block;
+    }
+
+    nav ul {
+        position: fixed;
+        background: #ff004f;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 25px;
+    }
+
+    nav ul .fa-solid {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+
+    .services-list div {
+        padding: 20px;
+    }
+
+    .testimonial-wrapper {
+        padding: 0 20px;
+    }
+
+    .testimonial {
+        width: 100%; /* 1 at a time on mobile */
+    }
+
+    .testimonial-slider {
+        width: 1000%; /* 10 testimonials, 1 visible */
+    }
+
+    .nav-btn {
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .prev-btn {
+        left: 0;
+    }
+
+    .next-btn {
+        right: 0;
+    }
+}
