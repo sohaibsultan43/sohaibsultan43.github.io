@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Sohaib Sultan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9fad070d5a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header" class="no-hero-image">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html#header">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Portfolio</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>FlowGPT</h1>
+                <p>An Alternative to Other Chatbots</p>
+                
+
+            </div>
+</p>
+        </div>
+    </div>
+
+    <!-- Project Details Section -->
+    <div id="project-details">
+        <div class="container">
+            <div class="project-content">
+                <div class="project-image">
+                    <img src="images/portfolio-1.png" alt="FlowGPT Project">
+                </div>
+                <div class="project-info">
+                    <h2>Overview</h2>
+                    <p>The platform is a conversational interface similar to ChatGPT but uniquely designed to integrate
+                        LLMs from multiple providers. The backend architecture facilitates real-time communication
+                        with diverse AI models, manages complex user sessions, stores contextual memories, and
+                        handles file operations with maximum efficiency. We also store files and their embeddings to
+                        give users more context driven answers using RAG (Retrieval Augmented Generation).
+                        Additionally, we have some pre-built Agents that the users can use to handle some more complex
+                        tasks like Deep Research.</p>
+                    
+                    <h2>Data Storage Architecture</h2>
+                    <ul>
+                        <li><span>Chat History - JSON Blob via Turso:
+                            <br>
+                            </span> All user-generated chats are stored in a structured JSON blob format using Turso, a distributed
+                            edge database optimized for low-latency reads and writes.
+                            <br>
+                                <li>
+                                    - Format: chat_id, user_id, name, messages[], timestamp 
+                                </li>
+                                <li>
+                                    - Justification: JSON format allows flexibility in storing metadata like token usage, model
+                                    responses, and user edits.
+                                </li>
+                            </li>
+                        <li><span>Users & Sessions: SQL with Clerk:</span><br> User authentication, session persistence, and metadata (like roles and permissions) are managed
+                            via Clerk over a traditional SQL-based database
+                            <br>
+                                <li>
+                                    - Schema: Users, Sessions, API keys, OAuth tokens
+                                </li>
+                                <li>
+                                    - Security: Built-in 2FA, passwordless auth, session encryption.
+                                </li>
+                        
+                        </li>
+                        <li><span>Files & Images: Object Storage via UploadThing:</span> User-uploaded assets (files, images, media) are stored using UploadThing on object storage
+                            systems (e.g., AWS S3 under the hood).
+                            
+
+                            <br>
+                                <li>
+                                    - CDN-enabled for fast access
+                                </li>
+                                <li>
+                                    - Metadata (file type, size, access history) linked to SQL
+                                </li>    
+
+                            </li>
+                        <li><span>Database:</span> MongoDB, Redis</li>
+                        <li><span>Cloud:</span> AWS (EC2, S3), Docker</li>
+                    </ul>
+                    
+                    <h2>Challenges</h2>
+                    <ul>
+                        <li>Integrating multiple LLMs with varying APIs and response formats.</li>
+                        <li>Optimizing real-time communication for low latency.</li>
+                        <li>Managing contextual memory across long user sessions.</li>
+                    </ul>
+                    
+                    <h2>Outcomes</h2>
+                    <p>The FlowGPT platform achieved a 95% user satisfaction rate in beta testing, with an average response time of under 200ms. It successfully handled 10,000+ concurrent users and supported multilingual interactions. The project was recognized for its innovative approach to LLM integration and scalability.</p>
+                    
+                    <a href="index.html#portfolio" class="btn">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="copyright">
+        <p>© 2025 Sohaib Sultan. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
