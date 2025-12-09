@@ -251,16 +251,43 @@
 
     <script src="script.js"></script>
 
-    <script>
-      window.intercomSettings = {
-        api_base: "https://api-iam.intercom.io",
-        app_id: "d5tthya6",
-      };
-    </script>
-    
-    <script>
-      // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/d5tthya6'
-      (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/d5tthya6';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
-    </script>
+        <script>
+            // Replace these with your actual user variables from your authentication/session logic
+            var user = {
+                id: "USER_ID_HERE", // e.g. from your backend or session
+                name: "USER_NAME_HERE",
+                email: "USER_EMAIL_HERE",
+                createdAt: 1704067200 // e.g. Unix timestamp in seconds
+            };
+
+            window.intercomSettings = {
+                app_id: 'zzc55drl',
+                user_id: user.id, // Replace with your user variable
+                name: user.name, // Replace with your user variable
+                email: user.email, // Replace with your user variable
+                created_at: user.createdAt // Replace with your user variable (Unix timestamp in seconds)
+            };
+        </script>
+        <script>
+            (function(){
+                var w=window;var ic=w.Intercom;
+                if(typeof ic==="function"){
+                    ic('reattach_activator');
+                    ic('update',w.intercomSettings);
+                }else{
+                    var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;
+                    var l=function(){
+                        var s=d.createElement('script');
+                        s.type='text/javascript';s.async=true;
+                        s.src='https://widget.intercom.io/widget/zzc55drl';
+                        var x=d.getElementsByTagName('script')[0];
+                        x.parentNode.insertBefore(s,x);
+                    };
+                    if(document.readyState==='complete'){l();}
+                    else if(w.attachEvent){w.attachEvent('onload',l);}
+                    else{w.addEventListener('load',l,false);}
+                }
+            })();
+        </script>
 </body>
 </html>
