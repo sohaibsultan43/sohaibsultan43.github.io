@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/9fad070d5a.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div id="header" class="no-hero-image">
         <div class="container">
@@ -24,11 +26,11 @@
             </nav>
             <div class="header-text">
                 <h1>FlowGPT</h1>
-                <p>An Alternative to Other Chatbots</p>
-                
+                <p>Multi-LLM Chat Integration Platform</p>
+
 
             </div>
-</p>
+            </p>
         </div>
     </div>
 
@@ -40,68 +42,84 @@
                     <img src="images/portfolio-1.png" alt="FlowGPT Project">
                 </div>
                 <div class="project-info">
-                    <h2>Overview</h2>
-                    <p>The platform is a conversational interface similar to ChatGPT but uniquely designed to integrate
-                        LLMs from multiple providers. The backend architecture facilitates real-time communication
-                        with diverse AI models, manages complex user sessions, stores contextual memories, and
-                        handles file operations with maximum efficiency. We also store files and their embeddings to
-                        give users more context driven answers using RAG (Retrieval Augmented Generation).
-                        Additionally, we have some pre-built Agents that the users can use to handle some more complex
-                        tasks like Deep Research.</p>
-                    
+                    <h2>The Challenge</h2>
+                    <p>Users needed a single, unified interface to interact with various LLM providers (OpenAI,
+                        Anthropic, etc.) without switching platforms.
+                        The system required handling varying API schemas, maintaining long-term conversational memory,
+                        and processing file uploads for RAG-based
+                        queries efficiently.</p>
+
+                    <h2>The Solution</h2>
+                    <p>I architected a platform that integrates multiple LLMs into a seamless conversational UI:</p>
+                    <ul>
+                        <li><strong>Unified Backend:</strong> Abstracted different LLM APIs into a single standardized
+                            interface.</li>
+                        <li><strong>Contextual Memory:</strong> Implemented a vector-store memory system to retrieve
+                            relevant past interactions.</li>
+                        <li><strong>Advanced RAG:</strong> Built a Retrieval Augmented Generation pipeline for file
+                            analysis and context-driven answers.</li>
+                        <li><strong>Autonomous Agents:</strong> Deployed specific agents for complex tasks like "Deep
+                            Research".</li>
+                    </ul>
+
                     <h2>Data Storage Architecture</h2>
                     <ul>
                         <li><span>Chat History - JSON Blob via Turso:
-                            <br>
-                            </span> All user-generated chats are stored in a structured JSON blob format using Turso, a distributed
+                                <br>
+                            </span> All user-generated chats are stored in a structured JSON blob format using Turso, a
+                            distributed
                             edge database optimized for low-latency reads and writes.
                             <br>
-                                <li>
-                                    - Format: chat_id, user_id, name, messages[], timestamp 
-                                </li>
-                                <li>
-                                    - Justification: JSON format allows flexibility in storing metadata like token usage, model
-                                    responses, and user edits.
-                                </li>
-                            </li>
-                        <li><span>Users & Sessions: SQL with Clerk:</span><br> User authentication, session persistence, and metadata (like roles and permissions) are managed
+                        <li>
+                            - Format: chat_id, user_id, name, messages[], timestamp
+                        </li>
+                        <li>
+                            - Justification: JSON format allows flexibility in storing metadata like token usage, model
+                            responses, and user edits.
+                        </li>
+                        </li>
+                        <li><span>Users & Sessions: SQL with Clerk:</span><br> User authentication, session persistence,
+                            and metadata (like roles and permissions) are managed
                             via Clerk over a traditional SQL-based database
                             <br>
-                                <li>
-                                    - Schema: Users, Sessions, API keys, OAuth tokens
-                                </li>
-                                <li>
-                                    - Security: Built-in 2FA, passwordless auth, session encryption.
-                                </li>
-                        
+                        <li>
+                            - Schema: Users, Sessions, API keys, OAuth tokens
                         </li>
-                        <li><span>Files & Images: Object Storage via UploadThing:</span> User-uploaded assets (files, images, media) are stored using UploadThing on object storage
+                        <li>
+                            - Security: Built-in 2FA, passwordless auth, session encryption.
+                        </li>
+
+                        </li>
+                        <li><span>Files & Images: Object Storage via UploadThing:</span> User-uploaded assets (files,
+                            images, media) are stored using UploadThing on object storage
                             systems (e.g., AWS S3 under the hood).
-                            
+
 
                             <br>
-                                <li>
-                                    - CDN-enabled for fast access
-                                </li>
-                                <li>
-                                    - Metadata (file type, size, access history) linked to SQL
-                                </li>    
+                        <li>
+                            - CDN-enabled for fast access
+                        </li>
+                        <li>
+                            - Metadata (file type, size, access history) linked to SQL
+                        </li>
 
-                            </li>
+                        </li>
                         <li><span>Database:</span> MongoDB, Redis</li>
                         <li><span>Cloud:</span> AWS (EC2, S3), Docker</li>
                     </ul>
-                    
+
                     <h2>Challenges</h2>
                     <ul>
                         <li>Integrating multiple LLMs with varying APIs and response formats.</li>
                         <li>Optimizing real-time communication for low latency.</li>
                         <li>Managing contextual memory across long user sessions.</li>
                     </ul>
-                    
-                    <h2>Outcomes</h2>
-                    <p>The FlowGPT platform achieved a 95% user satisfaction rate in beta testing, with an average response time of under 200ms. It successfully handled 10,000+ concurrent users and supported multilingual interactions. The project was recognized for its innovative approach to LLM integration and scalability.</p>
-                    
+
+                    <h2>The Result</h2>
+                    <p>The FlowGPT platform achieved a 95% user satisfaction rate in beta testing, with an average
+                        response time of under 200ms. It successfully handled 10,000+ concurrent users and supported
+                        multilingual interactions, proving the scalability of the custom architecture.</p>
+
                     <a href="index.html#portfolio" class="btn">Back to Portfolio</a>
                 </div>
             </div>
@@ -116,15 +134,16 @@
     <script src="script.js"></script>
 
     <script>
-      window.intercomSettings = {
-        api_base: "https://api-iam.intercom.io",
-        app_id: "d5tthya6",
-      };
+        window.intercomSettings = {
+            api_base: "https://api-iam.intercom.io",
+            app_id: "d5tthya6",
+        };
     </script>
-    
+
     <script>
-      // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/d5tthya6'
-      (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/d5tthya6';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+        // We pre-filled your app ID in the widget URL: 'https://widget.intercom.io/widget/d5tthya6'
+        (function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', w.intercomSettings); } else { var d = document; var i = function () { i.c(arguments); }; i.q = []; i.c = function (args) { i.q.push(args); }; w.Intercom = i; var l = function () { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://widget.intercom.io/widget/d5tthya6'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); }; if (document.readyState === 'complete') { l(); } else if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })();
     </script>
 </body>
+
 </html>
