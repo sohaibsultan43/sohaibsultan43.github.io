@@ -408,6 +408,34 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
+/* Philosophy Card Styles */
+.philosophy-card {
+    text-align: center;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.philosophy-card i {
+    font-size: 40px;
+    margin-bottom: 20px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.philosophy-card h3 {
+    color: var(--heading-color);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.philosophy-card .testimonial-text {
+    font-style: normal;
+    font-size: 14px;
+    color: #ccc;
+    line-height: 1.6;
+}
+
 .testimonial-author {
     display: flex;
     align-items: center;
