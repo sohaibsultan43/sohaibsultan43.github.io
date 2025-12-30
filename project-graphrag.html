@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise GraphRAG - Sohaib Sultan</title>
+    <link rel="stylesheet" href="style.css?v=4">
+    <script src="https://kit.fontawesome.com/9fad070d5a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header" class="no-hero-image">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html#header">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Work</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Enterprise GraphRAG</h1>
+                <p>Knowledge Graph Augmented Generation</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Details Section -->
+    <div id="project-details">
+        <div class="container">
+            <div class="project-content">
+                <div class="project-image">
+                    <img src="images/portfolio-3.png" alt="GraphRAG Project">
+                </div>
+                <div class="project-info">
+                    <h2>The Challenge</h2>
+                    <p>A legal tech startup found that standard vector-based RAG was failing on "multi-hop"
+                        queries—questions requiring connections between distant pieces of evidence (e.g., "How does
+                        Clause 5 in Contract A affect the liability defined in Addendum B?").</p>
+
+                    <h2>The Solution</h2>
+                    <p>I built a GraphRAG system that combines vector similarity with graph traversal to retrieve
+                        context based on explicit entities and relationships, not just semantic similarity:</p>
+                    <ul>
+                        <li><strong>Knowledge Graph Construction:</strong> Used Llama-3 to extract entities (Persons,
+                            Clauses, Dates) and relationships (AMENDS, REFERENCES) from legal docs into Neo4j.</li>
+                        <li><strong>Graph Traversal:</strong> Implemented Cypher queries to "walk" the graph and
+                            retrieve connected context up to 3 hops away.</li>
+                        <li><strong>Hybrid Retrieval:</strong> Combined vector search results with graph sub-graphs to
+                            feed the generation model.</li>
+                    </ul>
+
+                    <h2>Technical Architecture</h2>
+                    <ul>
+                        <li><span>Database:</span> Neo4j (Graph), Qdrant (Vector)</li>
+                        <li><span>Framework:</span> LlamaIndex, LangChain</li>
+                        <li><span>Models:</span> Fine-tuned Llama-3-70b for extraction</li>
+                        <li><span>Deployment:</span> Docker, AWS Lambda</li>
+                    </ul>
+
+                    <h2>The Result</h2>
+                    <p>Retrieval accuracy for complex multi-hop queries increased from 45% (baseline RAG) to 85%. The
+                        system successfully identified contradictions across document sets that were previously
+                        invisible to the standard search engine.</p>
+
+                    <a href="index.html#portfolio" class="btn">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="copyright">
+        <p>© 2025 Sohaib Sultan. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

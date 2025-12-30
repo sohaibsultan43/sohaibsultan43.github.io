@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Agents - Sohaib Sultan</title>
+    <link rel="stylesheet" href="style.css?v=4">
+    <script src="https://kit.fontawesome.com/9fad070d5a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header" class="no-hero-image">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html#header">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Work</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Autonomous Multi-Agent System</h1>
+                <p>Deep Research & Analysis Swarm</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Details Section -->
+    <div id="project-details">
+        <div class="container">
+            <div class="project-content">
+                <div class="project-image">
+                    <img src="images/portfolio-2.png" alt="Autonomous Agents Project">
+                </div>
+                <div class="project-info">
+                    <h2>The Challenge</h2>
+                    <p>A market intelligence firm needed to automate the generation of comprehensive industry reports.
+                        Human analysts were spending 20+ hours per report gathering data from scattered web sources,
+                        verifying facts, and synthesizing findings, limiting their ability to scale.</p>
+
+                    <h2>The Solution</h2>
+                    <p>I architected a directed cyclic graph of autonomous AI agents using LangGraph that mimics a human
+                        research team's workflow:</p>
+                    <ul>
+                        <li><strong>Researcher Agent:</strong> Decomposes queries into sub-topics and performs recursive
+                            web searches using Tavily API.</li>
+                        <li><strong>Critic Agent:</strong> Reviews gathered information for relevance, bias, and
+                            hallucination, sending weak data back for re-verification.</li>
+                        <li><strong>Writer Agent:</strong> Synthesizes verified data into a structured 10+ page report
+                            with citations and executive summaries.</li>
+                    </ul>
+
+                    <h2>Technical Architecture</h2>
+                    <ul>
+                        <li><span>Orchestration:</span> LangChain, LangGraph</li>
+                        <li><span>LLMs:</span> GPT-4o (Reasoning), Claude 3.5 Sonnet (Writing)</li>
+                        <li><span>Tools:</span> Tavily Search, Python REPL, Browserless.io</li>
+                        <li><span>State Management:</span> Redis for agent memory and checkpointing</li>
+                    </ul>
+
+                    <h2>The Result</h2>
+                    <p>The system reduced report generation time from 20 hours to 15 minutes while maintaining varying
+                        levels of depth. It now generates 500+ reports weekly, enabling the client to launch a new
+                        "On-Demand Intelligence" product.</p>
+
+                    <a href="index.html#portfolio" class="btn">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="copyright">
+        <p>© 2025 Sohaib Sultan. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
