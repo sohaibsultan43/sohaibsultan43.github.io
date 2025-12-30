@@ -64,6 +64,10 @@ nav {
     padding: 20px 0;
 }
 
+nav .fa-solid {
+    display: none;
+}
+
 .logo {
     width: 140px;
 }
