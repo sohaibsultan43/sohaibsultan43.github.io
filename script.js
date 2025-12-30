@@ -73,4 +73,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    }
 });
+
+// Testimonial Scroll (Optional: Auto-scroll or simple touch drag is handled by CSS snap, this could add auto-play)
+const container = document.getElementById('testimonial-container');
+let scrollAmount = 0;
+const scrollMax = container ? container.scrollWidth - container.clientWidth : 0;
+
+if (container && scrollMax > 0) {
+    // Simple auto-scroll interval (can be removed if users find it annoying)
+    // setInterval(() => {
+    //     container.scrollBy({ left: 300, behavior: 'smooth' });
+    //     if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+    //         container.scrollTo({ left: 0, behavior: 'smooth' });
+    //     }
+    // }, 5000);
+}
