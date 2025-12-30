@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Forecasting - Sohaib Sultan</title>
+    <link rel="stylesheet" href="style.css?v=3">
+    <script src="https://kit.fontawesome.com/9fad070d5a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header" class="no-hero-image">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html#header">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Work</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Sales Forecasting</h1>
+                <p>Retail Inventory Optimization</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Details Section -->
+    <div id="project-details">
+        <div class="container">
+            <div class="project-content">
+                <div class="project-image">
+                    <img src="images/portfolio-3.png" alt="Sales Forecasting Project">
+                </div>
+                <div class="project-info">
+                    <h2>The Challenge</h2>
+                    <p>A regional retail chain struggled with overstocking and stockouts due to inaccurate manual demand
+                        planning. They needed a predictive system to forecast sales at the SKU level across 50+ stores.
+                    </p>
+
+                    <h2>The Solution</h2>
+                    <p>I implemented a hybrid forecasting system combining statistical methods with deep learning to
+                        capture seasonality and complex trends:</p>
+                    <ul>
+                        <li><strong>Data Pipeline:</strong> Aggregated sales history, weather data, and holiday
+                            calendars into a unified warehouse.</li>
+                        <li><strong>Hybrid Model:</strong> Ensembled ARIMA for linear trends with LSTM (Long Short-Term
+                            Memory) networks to capture non-linear patterns.</li>
+                        <li><strong>Auto-Retraining:</strong> Implemented MLOps pipelines to automatically retrain
+                            models on new weekly data.</li>
+                    </ul>
+
+                    <h2>Technical Architecture</h2>
+                    <ul>
+                        <li><span>Languages:</span> Python, SQL</li>
+                        <li><span>ML Libraries:</span> TensorFlow, Statsmodels, Prophet</li>
+                        <li><span>Orchestration:</span> Airflow for pipeline management</li>
+                        <li><span>Cloud:</span> AWS SageMaker for training and deployment</li>
+                    </ul>
+
+                    <h2>The Result</h2>
+                    <p>The solution predicted monthly sales with 92% accuracy, leading to a 15% reduction in inventory
+                        holding costs and a 10% increase in availability for high-demand items.</p>
+
+                    <a href="index.html#portfolio" class="btn">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>© 2025 Sohaib Sultan. All rights reserved.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

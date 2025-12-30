@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Project - Sohaib Sultan</title>
+    <link rel="stylesheet" href="style.css?v=3">
+    <script src="https://kit.fontawesome.com/9fad070d5a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header" class="no-hero-image">
+        <div class="container">
+            <nav>
+                <img src="images/logo.png" class="logo">
+                <ul id="sidemenu">
+                    <li><a href="index.html#header">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#portfolio">Work</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <h1>Sentiment Analysis</h1>
+                <p>Social Media NLP Pipeline</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Details Section -->
+    <div id="project-details">
+        <div class="container">
+            <div class="project-content">
+                <div class="project-image">
+                    <img src="images/portfolio-2.png" alt="Sentiment Analysis Project">
+                </div>
+                <div class="project-info">
+                    <h2>The Challenge</h2>
+                    <p>A retail brand needed to monitor real-time public sentiment on Twitter to detect potential PR
+                        crises early. Manual monitoring was impossible due to the volume of data, and existing tools
+                        lacked the domain-specific nuance required to distinguish dissatisfaction from sarcasm.</p>
+
+                    <h2>The Solution</h2>
+                    <p>I developed a custom NLP pipeline using TensorFlow and BERTopic to ingest, classify, and
+                        visualize social media sentiment in real-time:</p>
+                    <ul>
+                        <li><strong>Data Ingestion:</strong> Built a scalable scraper using Twitter API v2 and Kafka for
+                            high-throughput stream processing.</li>
+                        <li><strong>Custom Model:</strong> Fine-tuned a BERT model on domain-specific datasets to
+                            achieve high accuracy in detecting sarcasm and mixed sentiments.</li>
+                        <li><strong>Dashboard:</strong> Created an interactive Streamlit dashboard for stakeholders to
+                            view trends and alert triggers.</li>
+                    </ul>
+
+                    <h2>Technical Architecture</h2>
+                    <ul>
+                        <li><span>Model:</span> HuggingFace Transformers (BERT), NLTK, Spacy</li>
+                        <li><span>Backend:</span> FastAPI for model serving, Redis for caching</li>
+                        <li><span>Database:</span> PostgreSQL for structured data, Elasticsearch for search</li>
+                        <li><span>Visualization:</span> Streamlit, Plotly</li>
+                    </ul>
+
+                    <h2>The Result</h2>
+                    <p>The system achieved 90% classification accuracy and reduced response time to negative PR
+                        incidents by 85%. It currently processes over 50,000 tweets daily for the client.</p>
+
+                    <a href="index.html#portfolio" class="btn">Back to Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>© 2025 Sohaib Sultan. All rights reserved.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
